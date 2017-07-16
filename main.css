@@ -1,66 +1,75 @@
-@import url(http://fonts.googleapis.com/css?family=Concert+One);
-
-h1 {
-  animation:glow 10s ease-in-out infinite;
-  
-  
-
-/* For less laggy effect, uncomment this:
-  
-  animation:none;
-  -webkit-text-stroke:1px #fff; 
-  
-=========== */
-  
-}
-
-
-
-* { box-sizing:border-box; }
-
 body {
-  background:#0a0a0a;
-  overflow:hidden;
-  text-align:center;
+  margin: 0;
+  background: #000; 
+}
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+ background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+.stopfade { 
+   opacity: .5;
 }
 
-figure {
-  animation:wobble 5s ease-in-out infinite;
-  transform-origin:center center;
-  transform-style:preserve-3d;
-}
+#polina { 
+  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight:100; 
+  background: rgba(0,0,0,0.3);
+  color: white;
 
-@keyframes wobble {
-  0%,100%{ transform:rotate3d(1,1,0,40deg); }
-  25%{ transform:rotate3d(-1,1,0,40deg); }
-  50%{ transform:rotate3d(-1,-1,0,40deg); }
-  75%{ transform:rotate3d(1,-1,0,40deg); }
+  padding: 2rem;
+  width: 33%;
+  margin:3rem;
+  float: right;
+  font-size: 1.2rem;
 }
-
 h1 {
-  display:block;
-  width:100%;
-  padding:40px;
-  line-height:1.5;
-  font:900 8em 'Concert One', sans-serif;
-  text-transform:uppercase;
-  position:absolute;
-  color:#0a0a0a;
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .2rem;
+}
+#polina button { 
+  display: block;
+  width: 50%;
+  padding: .4rem;
+  border: none; 
+  margin: 1rem auto; 
+  font-size: 1.3rem;
+  background: rgba(255,255,255,0.23);
+  color: #fff;
+  border-radius: 3px; 
+  cursor: pointer;
+  transition: .3s background;
+}
+#polina button:hover { 
+   background: rgba(0,0,0,0.5);
 }
 
-@keyframes glow {
-  0%,100%{ text-shadow:0 0 30px red; }
-  25%{ text-shadow:0 0 30px orange; }
-  50%{ text-shadow:0 0 30px forestgreen; }
-  75%{ text-shadow:0 0 30px cyan; }
+a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background:rgba(0,0,0,0.5);
+  padding: .5rem;
+  transition: .6s background; 
 }
-
-h1:nth-child(2){ transform:translateZ(5px); }
-h1:nth-child(3){ transform:translateZ(10px);}
-h1:nth-child(4){ transform:translateZ(15px); }
-h1:nth-child(5){ transform:translateZ(20px); }
-h1:nth-child(6){ transform:translateZ(25px); }
-h1:nth-child(7){ transform:translateZ(30px); }
-h1:nth-child(8){ transform:translateZ(35px); }
-h1:nth-child(9){ transform:translateZ(40px); }
-h1:nth-child(10){ transform:translateZ(45px); }
+a:hover{
+  background:rgba(0,0,0,0.9);
+}
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media screen and (max-device-width: 800px) {
+  html { background: url(https://thenewcode.com/assets/images/polina.jpg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+}
